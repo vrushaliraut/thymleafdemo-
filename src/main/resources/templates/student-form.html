@@ -29,10 +29,10 @@
     </input>
     <br><br>
         Favourite Operating system :
-    <input type="checkbox" th:field="*{favouriteSystems}" th:value="Linux">Linux</input>
-    <input type="checkbox" th:field="*{favouriteSystems}" th:value="MacOs">MacOs</input>
     <input type="checkbox" th:field="*{favouriteSystems}"
-           th:value="'Microsoft windows'">Microsoft windows</input>
+                           th:each="tempSystem : ${favouriteSystems}"
+                           th:value="${tempSystem}"
+                           th:text="${tempSystem}"></input>
 
     <br><br>
     <input type="submit" value="submit"/>
